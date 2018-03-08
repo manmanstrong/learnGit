@@ -1,4 +1,8 @@
 提交到远程仓库
 wowo
 解决冲突哦
-Creating a new branch is quick & simple.
+<<<<<<< HEAD
+Creating a new branch is quick AND simple.
+=======
+Creating a new branch is quick AND simple.
+>>>>>>> featurel

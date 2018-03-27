@@ -19,32 +19,32 @@ NSInteger ticketSurplusCount;
 - (void)viewDidLoad {
     [super viewDidLoad];
     //NSInvocationOperation 对象
-//    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-//    queue.maxConcurrentOperationCount = 5;
-//   NSBlockOperation *operation = [NSBlockOperation  blockOperationWithBlock:^{
-//       for (int i = 0; i < 5; i++) {
-//        // 模拟耗时操作
-//            NSLog(@"4%@^^%i",[NSThread currentThread],i); // 打印当前线程
-//       }
-//       }];
-//    //[operation waitUntilFinished];
-//    NSBlockOperation *operaOne = [NSBlockOperation  blockOperationWithBlock:^{
-//        NSLog(@"5%@",[NSThread currentThread]);
-//    }];
-//    [operaOne addDependency:operation];
-//    [queue addOperation:operation];
-//    [queue addOperation:operaOne];
-//    [queue addOperationWithBlock:^{
-//        NSLog(@"1%@",[NSThread currentThread]);
-//    }];
-//    [queue addOperationWithBlock:^{
-//        NSLog(@"2%@",[NSThread currentThread]);
-//    }];
-//    [queue addOperationWithBlock:^{
-//        NSLog(@"3%@",[NSThread currentThread]);
-//    }];
-//    [queue waitUntilAllOperationsAreFinished];
-//    NSLog(@"123");
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    queue.maxConcurrentOperationCount = 5;
+   NSBlockOperation *operation = [NSBlockOperation  blockOperationWithBlock:^{
+       for (int i = 0; i < 5; i++) {
+        // 模拟耗时操作
+            NSLog(@"4%@^^%i",[NSThread currentThread],i); // 打印当前线程
+       }
+       }];
+    //[operation waitUntilFinished];
+    NSBlockOperation *operaOne = [NSBlockOperation  blockOperationWithBlock:^{
+        NSLog(@"5%@",[NSThread currentThread]);
+    }];
+    [operaOne addDependency:operation];
+    [queue addOperation:operation];
+    [queue addOperation:operaOne];
+    [queue addOperationWithBlock:^{
+        NSLog(@"1%@",[NSThread currentThread]);
+    }];
+    [queue addOperationWithBlock:^{
+        NSLog(@"2%@",[NSThread currentThread]);
+    }];
+    [queue addOperationWithBlock:^{
+        NSLog(@"3%@",[NSThread currentThread]);
+    }];
+    [queue waitUntilAllOperationsAreFinished];
+    NSLog(@"123");
     [self initTicketStatusNotSave];
 }
 
